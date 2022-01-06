@@ -1,0 +1,21 @@
+[package]
+name = "snap7-rs"
+version = "1.142.0"
+authors = ["gmg137 <gmg137@live.com>"]
+edition = "2021"
+build = "build.rs"
+license = "MulanPSL-2.0"
+readme = "README.md"
+keywords = ["snap7", "s7", "plc", "siemens"]
+repository = "https://gitee.com/gmg137/snap7-rs"
+documentation = "https://docs.rs/snap7-rs/"
+homepage = "https://gitee.com/gmg137/snap7-rs"
+description = "snap7 C++ 库的 Rust 绑定，通过静态链接到 snap7，无需额外依赖。"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "^1"
+
+[build-dependencies]
+cc = "^1"
