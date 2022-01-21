@@ -155,3 +155,5 @@
 
 ### License
 本项目源码和文档采用[木兰宽松许可证](LICENSE) (MulanPSL-2.0)。
+
+[snap7](http://snap7.sourceforge.net/) itself is licensed under the terms of the [GNU Lesser General Public License](https://www.gnu.org/licenses/lgpl-3.0.html) (LGPL v3+).
