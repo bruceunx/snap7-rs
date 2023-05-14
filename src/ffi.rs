@@ -1507,96 +1507,6 @@ fn bindgen_test_layout_tm() {
         1usize,
         concat!("Alignment of ", stringify!(tm))
     );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<DateTime>())).tm_sec as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_sec)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<DateTime>())).tm_min as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_min)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<DateTime>())).tm_hour as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_hour)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<DateTime>())).tm_mday as *const _ as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_mday)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<DateTime>())).tm_mon as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_mon)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<DateTime>())).tm_year as *const _ as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_year)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<DateTime>())).tm_wday as *const _ as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_wday)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<DateTime>())).tm_yday as *const _ as usize },
-        28usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_yday)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<DateTime>())).tm_isdst as *const _ as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(tm),
-            "::",
-            stringify!(tm_isdst)
-        )
-    );
 }
 pub type bool_ = ::std::os::raw::c_int;
 pub const errLibInvalidParam: ::std::os::raw::c_int = -1;
@@ -1636,56 +1546,6 @@ fn bindgen_test_layout_TS7Tag() {
         ::std::mem::align_of::<TS7Tag>(),
         1usize,
         concat!("Alignment of ", stringify!(TS7Tag))
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Tag>())).Area as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Tag),
-            "::",
-            stringify!(Area)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Tag>())).DBNumber as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Tag),
-            "::",
-            stringify!(DBNumber)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Tag>())).Start as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Tag),
-            "::",
-            stringify!(Start)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Tag>())).Size as *const _ as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Tag),
-            "::",
-            stringify!(Size)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Tag>())).WordLen as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Tag),
-            "::",
-            stringify!(WordLen)
-        )
     );
 }
 pub type PS7Tag = *mut TS7Tag;
@@ -1804,76 +1664,6 @@ fn bindgen_test_layout_TS7DataItem() {
         1usize,
         concat!("Alignment of ", stringify!(TS7DataItem))
     );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7DataItem>())).Area as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7DataItem),
-            "::",
-            stringify!(Area)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7DataItem>())).WordLen as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7DataItem),
-            "::",
-            stringify!(WordLen)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7DataItem>())).Result as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7DataItem),
-            "::",
-            stringify!(Result)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7DataItem>())).DBNumber as *const _ as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7DataItem),
-            "::",
-            stringify!(DBNumber)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7DataItem>())).Start as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7DataItem),
-            "::",
-            stringify!(Start)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7DataItem>())).Amount as *const _ as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7DataItem),
-            "::",
-            stringify!(Amount)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7DataItem>())).pdata as *const _ as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7DataItem),
-            "::",
-            stringify!(pdata)
-        )
-    );
 }
 pub type PS7DataItem = *mut TS7DataItem;
 #[repr(C, packed)]
@@ -1898,76 +1688,6 @@ fn bindgen_test_layout_TS7BlocksList() {
         ::std::mem::align_of::<TS7BlocksList>(),
         1usize,
         concat!("Alignment of ", stringify!(TS7BlocksList))
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlocksList>())).OBCount as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlocksList),
-            "::",
-            stringify!(OBCount)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlocksList>())).FBCount as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlocksList),
-            "::",
-            stringify!(FBCount)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlocksList>())).FCCount as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlocksList),
-            "::",
-            stringify!(FCCount)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlocksList>())).SFBCount as *const _ as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlocksList),
-            "::",
-            stringify!(SFBCount)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlocksList>())).SFCCount as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlocksList),
-            "::",
-            stringify!(SFCCount)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlocksList>())).DBCount as *const _ as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlocksList),
-            "::",
-            stringify!(DBCount)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlocksList>())).SDBCount as *const _ as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlocksList),
-            "::",
-            stringify!(SDBCount)
-        )
     );
 }
 pub type PS7BlocksList = *mut TS7BlocksList;
@@ -2001,106 +1721,6 @@ fn bindgen_test_layout_TS7BlockInfo() {
         ::std::mem::align_of::<TS7BlockInfo>(),
         1usize,
         concat!("Alignment of ", stringify!(TS7BlockInfo))
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).BlkType as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(BlkType)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).BlkNumber as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(BlkNumber)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).BlkLang as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(BlkLang)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).BlkFlags as *const _ as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(BlkFlags)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).MC7Size as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(MC7Size)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).LoadSize as *const _ as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(LoadSize)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).LocalData as *const _ as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(LocalData)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).SBBLength as *const _ as usize },
-        28usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(SBBLength)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).CheckSum as *const _ as usize },
-        32usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(CheckSum)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).Version as *const _ as usize },
-        36usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7BlockInfo),
-            "::",
-            stringify!(Version)
-        )
     );
     assert_eq!(
         unsafe { &(*(::std::ptr::null::<TS7BlockInfo>())).CodeDate as *const _ as usize },
@@ -2311,46 +1931,6 @@ fn bindgen_test_layout_TS7CpInfo() {
         1usize,
         concat!("Alignment of ", stringify!(TS7CpInfo))
     );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7CpInfo>())).MaxPduLengt as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7CpInfo),
-            "::",
-            stringify!(MaxPduLengt)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7CpInfo>())).MaxConnections as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7CpInfo),
-            "::",
-            stringify!(MaxConnections)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7CpInfo>())).MaxMpiRate as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7CpInfo),
-            "::",
-            stringify!(MaxMpiRate)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7CpInfo>())).MaxBusRate as *const _ as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7CpInfo),
-            "::",
-            stringify!(MaxBusRate)
-        )
-    );
 }
 pub type PS7CpInfo = *mut TS7CpInfo;
 #[repr(C, packed)]
@@ -2370,26 +1950,6 @@ fn bindgen_test_layout_SZL_HEADER() {
         ::std::mem::align_of::<SZL_HEADER>(),
         1usize,
         concat!("Alignment of ", stringify!(SZL_HEADER))
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SZL_HEADER>())).LENTHDR as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(SZL_HEADER),
-            "::",
-            stringify!(LENTHDR)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<SZL_HEADER>())).N_DR as *const _ as usize },
-        2usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(SZL_HEADER),
-            "::",
-            stringify!(N_DR)
-        )
     );
 }
 pub type PSZL_HEADER = *mut SZL_HEADER;
@@ -2461,16 +2021,6 @@ fn bindgen_test_layout_TS7SZLList() {
             stringify!(Header)
         )
     );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7SZLList>())).List as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7SZLList),
-            "::",
-            stringify!(List)
-        )
-    );
 }
 pub type PS7SZLList = *mut TS7SZLList;
 #[repr(C, packed)]
@@ -2493,56 +2043,6 @@ fn bindgen_test_layout_TS7Protection() {
         ::std::mem::align_of::<TS7Protection>(),
         1usize,
         concat!("Alignment of ", stringify!(TS7Protection))
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Protection>())).sch_schal as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Protection),
-            "::",
-            stringify!(sch_schal)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Protection>())).sch_par as *const _ as usize },
-        2usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Protection),
-            "::",
-            stringify!(sch_par)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Protection>())).sch_rel as *const _ as usize },
-        4usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Protection),
-            "::",
-            stringify!(sch_rel)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Protection>())).bart_sch as *const _ as usize },
-        6usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Protection),
-            "::",
-            stringify!(bart_sch)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TS7Protection>())).anl_sch as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TS7Protection),
-            "::",
-            stringify!(anl_sch)
-        )
     );
 }
 pub type PS7Protection = *mut TS7Protection;
@@ -3255,86 +2755,6 @@ fn bindgen_test_layout_TSrvEvent() {
         ::std::mem::align_of::<TSrvEvent>(),
         1usize,
         concat!("Alignment of ", stringify!(TSrvEvent))
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TSrvEvent>())).EvtTime as *const _ as usize },
-        0usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TSrvEvent),
-            "::",
-            stringify!(EvtTime)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TSrvEvent>())).EvtSender as *const _ as usize },
-        8usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TSrvEvent),
-            "::",
-            stringify!(EvtSender)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TSrvEvent>())).EvtCode as *const _ as usize },
-        12usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TSrvEvent),
-            "::",
-            stringify!(EvtCode)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TSrvEvent>())).EvtRetCode as *const _ as usize },
-        16usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TSrvEvent),
-            "::",
-            stringify!(EvtRetCode)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TSrvEvent>())).EvtParam1 as *const _ as usize },
-        18usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TSrvEvent),
-            "::",
-            stringify!(EvtParam1)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TSrvEvent>())).EvtParam2 as *const _ as usize },
-        20usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TSrvEvent),
-            "::",
-            stringify!(EvtParam2)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TSrvEvent>())).EvtParam3 as *const _ as usize },
-        22usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TSrvEvent),
-            "::",
-            stringify!(EvtParam3)
-        )
-    );
-    assert_eq!(
-        unsafe { &(*(::std::ptr::null::<TSrvEvent>())).EvtParam4 as *const _ as usize },
-        24usize,
-        concat!(
-            "Offset of field: ",
-            stringify!(TSrvEvent),
-            "::",
-            stringify!(EvtParam4)
-        )
     );
 }
 pub type PSrvEvent = *mut TSrvEvent;

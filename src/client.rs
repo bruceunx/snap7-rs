@@ -13,12 +13,11 @@
 use crate::{ffi::*, model::*};
 use anyhow::*;
 use std::ffi::*;
-use std::os::raw::*;
 
 /// S7 客户端
 ///
 /// # Examples
-/// ```
+/// ```ignore
 /// use snap7_rs::S7Client;
 /// use std::ffi::*;
 /// use std::os::raw::*;

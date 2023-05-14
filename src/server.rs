@@ -13,7 +13,6 @@
 use crate::{ffi::*, model::*};
 use anyhow::*;
 use std::ffi::*;
-use std::os::raw::*;
 
 /// S7 服务端
 ///
