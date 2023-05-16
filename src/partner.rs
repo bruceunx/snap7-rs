@@ -707,8 +707,8 @@ impl S7Partner {
     pub fn error_text(error: i32) -> String {
         let mut chars = [0i8; 1024];
         unsafe {
-            Par_ErrorText(error, &mut chars as *mut c_char, 1024);
-            CStr::from_ptr(&chars as *const c_char)
+            Par_ErrorText(error, chars.as_mut_ptr(), 1024);
+            CStr::from_ptr(chars.as_ptr())
                 .to_string_lossy()
                 .into_owned()
         }
