@@ -709,8 +709,8 @@ impl S7Server {
     pub fn error_text(error: i32) -> String {
         let mut chars = [0i8; 1024];
         unsafe {
-            Srv_ErrorText(error, chars.as_mut_ptr(), 1024);
-            CStr::from_ptr(chars.as_ptr())
+            Srv_ErrorText(error, chars.as_mut_ptr() as *mut c_char, 1024);
+            CStr::from_ptr(chars.as_ptr() as *const c_char)
                 .to_string_lossy()
                 .into_owned()
         }
@@ -731,9 +731,9 @@ impl S7Server {
     pub fn event_text(event: *mut TSrvEvent) -> Result<String> {
         let mut chars = [0i8; 1024];
         unsafe {
-            let res = Srv_EventText(event, chars.as_mut_ptr(), 1024);
+            let res = Srv_EventText(event, chars.as_mut_ptr() as *mut c_char, 1024);
             if res == 0 {
-                Ok(CStr::from_ptr(chars.as_ptr())
+                Ok(CStr::from_ptr(chars.as_ptr() as *const c_char)
                     .to_string_lossy()
                     .into_owned())
             } else {
