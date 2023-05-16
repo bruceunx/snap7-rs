@@ -12,7 +12,10 @@
 //
 use crate::{ffi::*, model::*};
 use anyhow::*;
-use std::ffi::*;
+use std::{
+    ffi::{CStr, CString},
+    os::raw::*,
+};
 
 /// S7 客户端
 ///
@@ -1738,8 +1741,8 @@ impl S7Client {
     pub fn error_text(error: i32) -> String {
         let mut chars = [0i8; 1024];
         unsafe {
-            Cli_ErrorText(error, &mut chars as *mut i8, 1024);
-            CStr::from_ptr(&chars as *const i8)
+            Cli_ErrorText(error, &mut chars as *mut c_char, 1024);
+            CStr::from_ptr(&chars as *const c_char)
                 .to_string_lossy()
                 .into_owned()
         }

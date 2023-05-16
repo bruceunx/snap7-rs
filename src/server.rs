@@ -12,7 +12,10 @@
 //
 use crate::{ffi::*, model::*};
 use anyhow::*;
-use std::ffi::*;
+use std::{
+    ffi::{CStr, CString},
+    os::raw::*,
+};
 
 /// S7 服务端
 ///
@@ -706,8 +709,8 @@ impl S7Server {
     pub fn error_text(error: i32) -> String {
         let mut chars = [0i8; 1024];
         unsafe {
-            Srv_ErrorText(error, &mut chars as *mut i8, 1024);
-            CStr::from_ptr(&chars as *const i8)
+            Srv_ErrorText(error, &mut chars as *mut c_char, 1024);
+            CStr::from_ptr(&chars as *const c_char)
                 .to_string_lossy()
                 .into_owned()
         }
@@ -728,9 +731,9 @@ impl S7Server {
     pub fn event_text(event: *mut TSrvEvent) -> Result<String> {
         let mut chars = [0i8; 1024];
         unsafe {
-            let res = Srv_EventText(event, &mut chars as *mut i8, 1024);
+            let res = Srv_EventText(event, &mut chars as *mut c_char, 1024);
             if res == 0 {
-                Ok(CStr::from_ptr(&chars as *const i8)
+                Ok(CStr::from_ptr(&chars as *const c_char)
                     .to_string_lossy()
                     .into_owned())
             } else {
