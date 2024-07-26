@@ -1,4 +1,7 @@
-# snap7-rs
+# snap7-rs -> rust-snap7
+
+> [!IMPORTANT]
+> [2024 Jun 25] crate name change to `rust-snap7`
 
 ## This repository add utils module like in `python-snap7` to handle data from PLC or vice verse.
 
