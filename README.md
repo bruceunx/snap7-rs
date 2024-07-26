@@ -1,5 +1,42 @@
 # snap7-rs
 
+## This repository add utils module like in `python-snap7` to handle data from PLC or vice verse.
+
+### Utils Example
+
+```rust
+use snap7_rs::utils;
+use snap7_rs::S7Client;
+use snap7_rs::{InternalParam, InternalParamValue};
+
+#[allow(dead_code)]
+fn connect_to_plc() -> Result<(), String> {
+    let client = S7Client::create();
+    client
+        .set_param(InternalParam::RemotePort, InternalParamValue::U16(1102))
+        .expect("failed to set remote port value! Exiting..");
+    if let Err(e) = client.connect_to("127.0.0.1", 1, 1) {
+        println!("Connection to PLC failed: {:?}", e);
+    } else {
+        let mut buff = [0u8; 2];
+        if let Err(e) = client.db_read(1, 20, 2, &mut buff) {
+            println!("Failed to read DB: {:?}", e);
+        } else {
+            let data = utils::getters::get_int(&buff.to_vec(), 0);
+            println!("DB1.W20: {}", data);
+        }
+        client
+            .disconnect()
+            .expect("client disconnect failed! Exiting..");
+    }
+    Ok(())
+}
+fn main() {
+    connect_to_plc().expect("conenct fn error");
+}
+
+```
+
 This is a Rust binding of the [snap7](http://snap7.sourceforge.net/) C++ library, linked statically to snap7 with no additional dependencies.
 
 > Warning: This library has not undergone any security clearance and is to be used at your own risk.
@@ -7,6 +44,7 @@ This is a Rust binding of the [snap7](http://snap7.sourceforge.net/) C++ library
 **Note**: This repository is based on the original [snap7-rs](https://gitee.com/gmg137/snap7-rs.git), and was created to translate some stuff in the original repository to English and fix some compilation errors.
 
 ### Client Example
+
 ```rust
     use snap7_rs::S7Client;
     use std::ffi::*;
@@ -30,6 +68,7 @@ This is a Rust binding of the [snap7](http://snap7.sourceforge.net/) C++ library
 ```
 
 ### Server-side example
+
 ```rust
     use snap7_rs::{AreaCode, InternalParam, InternalParamValue, S7Server, MaskKind};
     use std::ffi::*;
@@ -75,6 +114,7 @@ This is a Rust binding of the [snap7](http://snap7.sourceforge.net/) C++ library
 ```
 
 ### Passive partner example
+
 ```rust
     use snap7_rs::S7Partner;
     use std::ffi::*;
@@ -106,6 +146,7 @@ This is a Rust binding of the [snap7](http://snap7.sourceforge.net/) C++ library
 ```
 
 ### Active partner example
+
 ```rust
     use snap7_rs::S7Partner;
     use std::ffi::*;
@@ -152,6 +193,7 @@ This is a Rust binding of the [snap7](http://snap7.sourceforge.net/) C++ library
 ```
 
 ### License
+
 The source code and documentation for this project are under the [Mulan Loose License](LICENSE) (MulanPSL-2.0).
 
 [snap7](http://snap7.sourceforge.net/) itself is licensed under the terms of the [GNU Lesser General Public License](https://www.gnu.org/licenses/lgpl-3.0.html) (LGPL v3+).

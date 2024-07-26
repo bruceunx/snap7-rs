@@ -1,13 +1,13 @@
 [package]
-name = "snap7-rs"
+name = "rust-snap7"
 version = "1.142.0"
-authors = ["gmg137 <gmg137@live.com>"]
+authors = ["bruce <bruceunx@outlook.com>", "gmg137 <gmg137@live.com>"]
 edition = "2021"
 build = "build.rs"
 readme = "README.md"
 keywords = ["snap7", "s7", "plc", "siemens"]
-repository = "https://github.com/Green-Mod/snap7-rs.git"
-homepage = "https://github.com/Green-Mod/snap7-rs.git"
+repository = "https://github.com/bruceunx/snap7-rs"
+homepage = "https://github.com/bruceunx/snap7-rs"
 
 [dependencies]
 anyhow = "^1"
