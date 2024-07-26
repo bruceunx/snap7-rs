@@ -11,6 +11,7 @@ homepage = "https://github.com/Green-Mod/snap7-rs.git"
 
 [dependencies]
 anyhow = "^1"
+chrono = "0.4.38"
 
 [build-dependencies]
 cc = "^1"
