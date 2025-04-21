@@ -4,7 +4,7 @@ use std::time::Duration;
 
 pub fn get_bool(bytearray: &[u8], byte_index: usize, bool_index: usize) -> Result<bool, String> {
     if bytearray.len() < byte_index + 2 || bool_index > 7 || bool_index < 0 {
-        return Err("Buffer has no enough data to decoding".to_string);
+        return Err("Buffer has no enough data to decoding".to_string());
     }
     let index_value = 1 << bool_index;
     let byte_value = bytearray[byte_index];
@@ -56,15 +56,15 @@ pub fn get_string(bytearray: &[u8], byte_index: usize) -> Result<String, String>
     let str_length = bytearray[byte_index + 1] as usize;
 
     if str_length > max_string_size || max_string_size > 254 {
-        return Err("String length not match!".to_string);
+        return Err("String length not match!".to_string());
     }
 
     if bytearray.len() < byte_index + str_length + 1 {
-        return Err("Buffer has no enough data to decoding".to_string);
+        return Err("Buffer has no enough data to decoding".to_string());
     }
 
     let data = &bytearray[byte_index + 2..byte_index + 2 + str_length];
-    let str_data = String::from_utf8(data.to_vec()).map_err(|e| e.to_string());
+    let str_data = String::from_utf8(data.to_vec()).map_err(|e| e.to_string())?;
     Ok(str_data)
 }
 

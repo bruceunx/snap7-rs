@@ -1,6 +1,6 @@
 [package]
 name = "rust-snap7"
-version = "1.142.0"
+version = "1.142.1"
 authors = ["bruce <bruceunx@outlook.com>", "gmg137 <gmg137@live.com>"]
 edition = "2021"
 build = "build.rs"
@@ -15,7 +15,6 @@ homepage = "https://github.com/bruceunx/snap7-rs"
 anyhow = "^1"
 chrono = "0.4.38"
 regex = "1.10.5"
-thiserror = "2"
 
 [build-dependencies]
 cc = "^1"
