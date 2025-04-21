@@ -15,6 +15,7 @@ homepage = "https://github.com/bruceunx/snap7-rs"
 anyhow = "^1"
 chrono = "0.4.38"
 regex = "1.10.5"
+thiserror = "2"
 
 [build-dependencies]
 cc = "^1"

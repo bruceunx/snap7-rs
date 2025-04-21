@@ -2,11 +2,14 @@ use chrono::{DateTime, NaiveDate, Utc};
 use std::convert::TryInto;
 use std::time::Duration;
 
-pub fn get_bool(bytearray: &[u8], byte_index: usize, bool_index: usize) -> bool {
+pub fn get_bool(bytearray: &[u8], byte_index: usize, bool_index: usize) -> Result<bool, String> {
+    if bytearray.len() < byte_index + 2 || bool_index > 7 || bool_index < 0 {
+        return Err("Buffer has no enough data to decoding".to_string);
+    }
     let index_value = 1 << bool_index;
     let byte_value = bytearray[byte_index];
     let current_value = byte_value & index_value;
-    current_value == index_value
+    Ok(current_value == index_value)
 }
 
 pub fn get_byte(bytearray: &[u8], byte_index: usize) -> u8 {
@@ -48,16 +51,21 @@ pub fn get_fstring(
     }
 }
 
-pub fn get_string(bytearray: &[u8], byte_index: usize) -> String {
+pub fn get_string(bytearray: &[u8], byte_index: usize) -> Result<String, String> {
     let max_string_size = bytearray[byte_index] as usize;
     let str_length = bytearray[byte_index + 1] as usize;
 
     if str_length > max_string_size || max_string_size > 254 {
-        panic!("String length error");
+        return Err("String length not match!".to_string);
+    }
+
+    if bytearray.len() < byte_index + str_length + 1 {
+        return Err("Buffer has no enough data to decoding".to_string);
     }
 
     let data = &bytearray[byte_index + 2..byte_index + 2 + str_length];
-    String::from_utf8(data.to_vec()).unwrap()
+    let str_data = String::from_utf8(data.to_vec()).map_err(|e| e.to_string());
+    Ok(str_data)
 }
 
 pub fn get_dword(bytearray: &[u8], byte_index: usize) -> u32 {
