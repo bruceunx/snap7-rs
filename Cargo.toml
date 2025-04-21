@@ -1,6 +1,6 @@
 [package]
 name = "rust-snap7"
-version = "1.142.1"
+version = "1.142.2"
 authors = ["bruce <bruceunx@outlook.com>", "gmg137 <gmg137@live.com>"]
 edition = "2021"
 build = "build.rs"
