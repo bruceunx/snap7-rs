@@ -3,7 +3,7 @@ use std::convert::TryInto;
 use std::time::Duration;
 
 pub fn get_bool(bytearray: &[u8], byte_index: usize, bool_index: usize) -> Result<bool, String> {
-    if bytearray.len() < byte_index + 2 || bool_index > 7 || bool_index < 0 {
+    if bytearray.len() < byte_index + 2 || bool_index > 7 {
         return Err("Buffer has no enough data to decoding".to_string());
     }
     let index_value = 1 << bool_index;
